@@ -7,14 +7,18 @@ fn main() -> eframe::Result<()> {
     env_logger::init(); // Log to stderr (if you run with `RUST_LOG=debug`).
 
     let native_options = eframe::NativeOptions {
-        initial_window_size: Some([400.0, 300.0].into()),
-        min_window_size: Some([300.0, 220.0].into()),
+        initial_window_size: Some([1024.0, 640.0].into()),
+        min_window_size: Some([800.0, 600.0].into()),
         ..Default::default()
     };
     eframe::run_native(
         "eframe template",
         native_options,
-        Box::new(|cc| Box::new(discord::TemplateApp::new(cc))),
+        Box::new(|cc| {
+            egui_extras::install_image_loaders(&cc.egui_ctx);
+
+            Box::new({{project-name}}::TemplateApp::new(cc))
+        }),
     )
 }
 
@@ -31,7 +35,7 @@ fn main() {
             .start(
                 "the_canvas_id", // hardcode it
                 web_options,
-                Box::new(|cc| Box::new(discord::TemplateApp::new(cc))),
+                Box::new(|cc| Box::new({{project-name}}::TemplateApp::new(cc))),
             )
             .await
             .expect("failed to start eframe");

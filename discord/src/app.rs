@@ -46,8 +46,10 @@ impl eframe::App for TemplateApp {
         // Put your widgets into a `SidePanel`, `TopPanel`, `CentralPanel`, `Window` or `Area`.
         // For inspiration and more examples, go to https://emilk.github.io/egui
         // panel is top to down layout
+        layout::sider_bar_panel::default(self, ctx);
+        layout::sider_bar_panel::channel_panel(self, ctx);
         layout::top_panel::default(self, ctx, _frame);
-        layout::content_panel::default(self, ctx, _frame);
+        layout::content_panel::default(self, ctx);
     }
 
     /// Called by the frame work to save state before shutdown.

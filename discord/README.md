@@ -18,15 +18,15 @@ Start by clicking "Use this template" at https://github.com/emilk/eframe_templat
 
 Change the name of the crate: Chose a good name for your project, and change the name to it in:
 * `Cargo.toml`
-    * Change the `package.name` from `discord` to `your_crate`.
+    * Change the `package.name` from `{{project-name}}` to `your_crate`.
     * Change the `package.authors`
 * `main.rs`
-    * Change `discord::TemplateApp` to `your_crate::TemplateApp`
+    * Change `{{project-name}}::TemplateApp` to `your_crate::TemplateApp`
 * `index.html`
     * Change the `<title>eframe template</title>` to `<title>your_crate</title>`. optional.
 * `assets/sw.js`
-  * Change the `'./discord.js'` to `./your_crate.js` (in `filesToCache` array)
-  * Change the `'./discord_bg.wasm'` to `./your_crate_bg.wasm` (in `filesToCache` array)
+  * Change the `'./{{project-name}}.js'` to `./your_crate.js` (in `filesToCache` array)
+  * Change the `'./{{project-name}}_bg.wasm'` to `./your_crate_bg.wasm` (in `filesToCache` array)
 
 ### Learning about egui
 

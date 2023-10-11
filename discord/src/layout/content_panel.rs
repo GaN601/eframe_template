@@ -1,14 +1,9 @@
 use crate::{component, TemplateApp};
 use egui::{Context, InnerResponse};
 
-pub fn default(
-    app: &mut TemplateApp,
-    ctx: &Context,
-    _frame: &mut eframe::Frame,
-) -> InnerResponse<()> {
+pub fn default(app: &mut TemplateApp, ctx: &Context) -> InnerResponse<()> {
     egui::CentralPanel::default().show(ctx, |ui| {
         component::side_bar::default(app, ui);
-
         egui::CentralPanel::default().show_inside(ui, |ui| {
             // The central panel the region left after adding TopPanel's and SidePanel's
             ui.heading("eframe template");
