@@ -17,7 +17,7 @@ fn main() -> eframe::Result<()> {
         Box::new(|cc| {
             egui_extras::install_image_loaders(&cc.egui_ctx);
 
-            Box::new({{pname}}::TemplateApp::new(cc))
+            Box::new({{project-name}}::TemplateApp::new(cc))
         }),
     )
 }
@@ -35,7 +35,7 @@ fn main() {
             .start(
                 "the_canvas_id", // hardcode it
                 web_options,
-                Box::new(|cc| Box::new({{pname}}::TemplateApp::new(cc))),
+                Box::new(|cc| Box::new({{project-name}}::TemplateApp::new(cc))),
             )
             .await
             .expect("failed to start eframe");
